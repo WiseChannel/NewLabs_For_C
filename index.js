@@ -133,28 +133,26 @@
         /*
         C++ Code
 
-        #include <iostream>
-        #inclide <cmath>
+       #include <iostream>
+       #include <cmath>
 
-        using namespace std;
+       using namespace std;
 
         int main() {
             int bytesNumber = 0;
             cout << "Enter bytes" << endl;
             cin >> bytesNumber;
             cout << pow(2,bytesNumber);
-
             int nameUnSugned = 0;
             int nameSigned = 0;
 
             for(int i = 0; i < bytesNumber; ++i) {
-                nameUnSigned += pow(2,i);
-                nameSigned += i < bytesNumber - 1 ? pow(2,i) : 0;
+                nameUnSugned += pow(2,i);
+                nameSigned += i < bytesNumber - 1 ? std::pow(2,i) : 0;
             }
-            cout << endl << "Unsigned" << 0 << nameSigned
-            cout << endl << "Unsigned" << Signed+1 << nameUnSigned
+            cout << endl << "Unsigned" << 0 << nameSigned;
+            cout << endl << "Unsigned" << nameSigned + 1 << nameSigned;
         }
-
          */
 
         console.log(inputValue)
