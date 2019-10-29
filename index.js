@@ -2,22 +2,24 @@
     //#1Lub
 
     function getValueLabOne() {
-        let input = document.querySelector('#OneLabInp').value;
-        let sum = input.split('', 3);
-        let arr = [
+        let input = document.querySelector('#OneLabInp').value; // 1. Получаем значение из инпута
+        let sum = input.split('', 3);                                   // 2. Разбиваем значение на строки в массив
+        let arr = [                                                     // 3. Переопределяем тип String в Number
             parseInt(sum[0],),
             parseInt(sum[1],),
             parseInt(sum[2],),
         ];
 
-        let NaNError = arr[0] + arr[1] + arr[2];
+        let NaNError = arr[0] + arr[1] + arr[2];                        // 4. Сумируем
 
-        console.log(typeof NaNError, NaNError)
+        console.log(typeof NaNError, NaNError);                         // Проверка
 
-        console.log(`${arr[0]} + ${arr[1]} + ${arr[2]} = `, NaNError);
+        console.log(`${arr[0]} + ${arr[1]} + ${arr[2]} = `, NaNError);  // Проверка
 
-        let spanT = document.querySelector('#spanTextValue');
-        spanT.innerHTML = `<div class="test"> ${arr[0]} + ${arr[1]} + ${arr[2]} = ${NaNError} </div>`;
+        let spanT = document.querySelector('#spanTextValue');   // Получаем доступ к спану
+        spanT.innerHTML = `<div class="test"> ${arr[0]} + ${arr[1]} + ${arr[2]} = ${NaNError} </div>`; // Добавляем в спан result
+
+        // Проверка
 
         if (input.length > 3) {
             console.error('Value > 3');
@@ -35,20 +37,23 @@
     //#2Lub
 
     function getValueLabTwo() {
-        let input = document.querySelector("#inputTwoLab").value;
-        let sum = input.split('', 4);
-        let arr = [
+        let input = document.querySelector("#inputTwoLab").value;      // 1. Получаем значение из инпута
+        let sum = input.split('', 4);                                          // 2. Разбиваем значение на строки в массив
+        let arr = [                                                            // 3. Переопределяем тип String в Number
             parseInt(sum[0],),
             parseInt(sum[1],),
             parseInt(sum[2],),
             parseInt(sum[3],),
         ];
 
-        let NaNError = arr[0] + arr[1] + arr[2];
+        let NaNError = arr[0] + arr[1] + arr[2];                                // 4. Сумируем
 
-        const maxValue = Math.max(...arr);
-        let span = document.querySelector('#spanLabTwo');
-        span.innerHTML = `Max{ ${arr[0]},${arr[1]},${arr[2]},${arr[3]} = ${maxValue} }`;
+        const maxValue = Math.max(...arr);                                      // 5. Получаем максимальное значение из массива чисел
+        let span = document.querySelector('#spanLabTwo');              // Доступ к спану
+        span.innerHTML = `Max{ ${arr[0]},${arr[1]},${arr[2]},${arr[3]} = ${maxValue} }`;    // Выводит значения
+
+        // Проверки
+
         if(input.length < 4) {
             console.error('Value < 4');
             span.innerHTML = `<div class="test"><span id="error">Помилка</span>: <u>значення менше 4</u>!</div>`
@@ -67,13 +72,13 @@
 
     function getValueThereLab() {
 
-        let inputValue = document.querySelector('#inputThereLab').value;
-        let numValueBit = null;
+        let inputValue = document.querySelector('#inputThereLab').value; // Доступн
+        let numValueBit = null; // Состояние
 
         //numVer
 
-        let valueInteger = {
-            int: 2.5,
+        let valueInteger = {          // значение выделяемое в памяти под переменную в с++
+            int: 2,
             char: 1,
             bool: 1,
             float: 8,
@@ -119,12 +124,14 @@
     function maxMinValue() {
         const inputx1 = document.querySelector('#inputFourLabx1').value;
         const inputx2 = document.querySelector('#inputFourLabx2').value;
-        const inputx3 = document.querySelector('#inputFourLabx3').value;
+        const inputx3 = document.querySelector('#inputFourLabx3').value;       // Доступ
         const inputx4 = document.querySelector('#inputFourLabx4').value;
         const span = document.querySelector('#spanLabFour');
 
-        let maxValue =  Math.max(inputx1, inputx2, inputx3, inputx4);
+        let maxValue =  Math.max(inputx1, inputx2, inputx3, inputx4);       // Получаем значеие максимального и минимального (ниже) числа
         let minValue = Math.min(inputx1, inputx2, inputx3, inputx4);
+
+        // Проверки
 
         if (inputx1 === maxValue) {
             span.innerHTML = `x1 = ${inputx1} max `;
@@ -158,6 +165,8 @@
         } else {
             span.innerHTML = `x4 = ${inputx4}<br>`;
         }
+
+
 
         // if (inputx2 === maxValue) {
         //     span.innerHTML = ` <br>x1 = ${inputx2} max`
@@ -194,35 +203,3 @@
 
     }
 
-
-
-                           //OOP+ES6_Class   +реализовать все при помощи класов
-
-
-    class allLabs {
-        constructor() {
-
-        }
-
-        LabOne() {
-
-        }
-
-        LabTwo() {
-
-        }
-
-        LabThere() {
-
-        }
-
-        LabFour() {
-
-        }
-
-        LabFive() {
-
-        }
-
-
-    }
